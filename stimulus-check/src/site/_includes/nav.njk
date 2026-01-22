@@ -1,0 +1,9 @@
+<nav>
+  <ul class="-mx-6 lg:flex">
+    {% for menuItem in menu.mainMenu.menuItems %}
+      <li class="uppercase lg:mb-0">
+        <a href="{{ menuItem.linkURL }}">{{ menuItem.linkText }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

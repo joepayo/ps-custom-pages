@@ -1,0 +1,222 @@
+@tailwind base;
+
+/* purgecss start ignore */
+
+/* Add custom base styles here */
+::selection {
+  @apply bg-michigan-blue text-michigan-maize;
+}
+
+body {
+  @apply text-lg;
+}
+
+a {
+  transition: color 0.3s ease;
+  @apply text-dodger-blue;
+}
+
+a:hover {
+  @apply text-michigan-blue;
+}
+
+.markdown ul {
+  list-style: disc;
+  margin-left: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown ul li {
+  line-height: 1.6;
+  padding-left: 1.5rem;
+}
+
+a.social {
+  color: transparent;
+  font-size: 0;
+}
+
+a[href^="mailto:"].social {
+  background-image: url('./img/mail.svg');
+  height: 28px;
+  width: 34px;
+}
+
+a[href*="facebook.com"].social {
+  background-image: url('./img/facebook.svg');
+  height: 34px;
+  width: 19px;
+}
+
+a[href*="twitter.com"].social {
+  background-image: url('./img/twitter.svg');
+  height: 29px;
+  width: 34px;
+}
+
+a[href*="instagram.com"].social {
+  background-image: url('./img/instagram.svg');
+  height: 34px;
+  width: 34px;
+}
+
+a[href*="linkedin.com"].social {
+  background-image: url('./img/linkedin.svg');
+  height: 32px;
+  width: 34px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  font-size: 12px;
+  height: 12px;
+  width: 24px;
+  padding: 12px;
+  transition: all .3s ease;
+}
+
+.arrow-up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.arrow-down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.faq.open i.arrow {
+  @apply arrow-up;
+}
+
+.faq.open .answer,
+.more.open .markdown {
+  transition: all .3s ease-out;
+  height: 100%;
+  max-height: 3000px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.faq.open .answer {
+  padding: 0 2rem 2rem;
+}
+
+.button {
+  letter-spacing: -0.4px;
+  border-radius: 26px;
+  border: 2px solid #1f80ff;
+  background-color: #1f80ff;
+  @apply px-4 py-2 text-base font-bold text-white cursor-pointer;
+}
+
+.button:hover {
+  @apply text-white bg-michigan-blue;
+}
+
+.shadow-button.button {
+  @apply text-black bg-transparent ;
+}
+
+/* purgecss end ignore */
+
+@tailwind components;
+@tailwind utilities;
+
+/* purgecss start ignore */
+
+/* Add custom utilities here. */
+.clip {
+  @apply fixed;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.focusable:focus {
+  @apply relative;
+  clip: auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Animation */
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.animated-delay {
+  animation-delay: 0.25s;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translate3d(-2.5%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translate3d(2.5%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translate3d(-1rem, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up {
+  animation-name: fade-in-up;
+}
+
+.fade-in-right {
+  animation-name: fade-in-right;
+}
+
+.fade-in-left {
+  animation-name: fade-in-left;
+}
+
+.slide-in-right {
+  animation-name: slide-in-right;
+}
+
+/* purgecss end ignore */

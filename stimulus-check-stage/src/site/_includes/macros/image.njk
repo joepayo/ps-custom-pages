@@ -1,0 +1,25 @@
+{% macro image(image, alt, height, width, classes, lazy = false) %}
+  <img
+    {% if lazy != false %}
+      data-src="{{ image }}"
+    {% else %}
+      src="{{ image }}"
+    {% endif %}
+    alt="{{ alt }}"
+    height="{{ height }}"
+    width="{{ width }}"
+    class="{{ "lazy" if lazy != false }} {{ classes }}"
+    data-toggle-class="fade-in"
+  >
+
+  <noscript>
+    <img
+      src="{{ image }}"
+      alt="{{ alt }}"
+      height="{{ height }}"
+      width="{{ width }}"
+      class="{{ classes }}"
+      loading="lazy"
+    >
+  </noscript>
+{% endmacro %}

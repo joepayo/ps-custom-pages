@@ -1,0 +1,11 @@
+---
+tags: faqs
+question: Are college students eligible for the stimulus payments?
+id: faq-12
+date: 2020-01-12
+---
+**College students are only eligible if they are not claimed as a dependent by their parents.**
+<br><br>
+Generally, students who are under 24, receive significant financial support from their parents, and attend school full-time are considered dependents by the IRS. These students are not eligible for the stimulus payment.
+<br><br>
+Students who are over 19, in school part time, largely supporting themselves, or not living with their parents are likely to have independent status. These students are eligible for the stimulus payment.

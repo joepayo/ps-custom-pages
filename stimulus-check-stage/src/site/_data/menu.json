@@ -1,0 +1,22 @@
+{
+  "mainMenu": {
+    "menuItems": [
+      {
+        "linkText": "Nav Item 1",
+        "linkURL": "/"
+      },
+      {
+        "linkText": "Nav Item 2",
+        "linkURL": "/"
+      },
+      {
+        "linkText": "Nav Item 3",
+        "linkURL": "/"
+      },
+      {
+        "linkText": "Nav Item 4",
+        "linkURL": "/"
+      }
+    ]
+  }
+}

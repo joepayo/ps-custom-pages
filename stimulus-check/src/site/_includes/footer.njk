@@ -1,0 +1,24 @@
+<footer class="py-10 text-xs text-white bg-michigan-blue">
+  <div class="container flex flex-wrap items-end justify-between px-4 mx-auto md:flex-no-wrap">
+    <div class="flex items-start footer-left">
+      <img src="/img/blockm.svg" alt="U-M Logo" class="w-20 mx-auto mb-4 mr-4">
+      <div>
+        <address class="not-italic"><strong>{{ contact.address_name }}</strong><br>
+        {{ contact.address_org }}<br>
+        {{ contact.address_street }}<br>
+        {{ contact.address_locality }}</address>
+        <br>
+        <p class="mt-2 text-xs">
+          <a href="mailto:{{ contact.email }}" class="text-white hover:text-michigan-maize">{{ contact.email }}</a> · Marketing Toolkit
+        </p>
+      </div>
+    </div>
+    
+    <div class="mt-4 footer-right">
+      &copy; {% currentYear %}
+      <a href="https://regents.umich.edu" class="text-white hover:text-michigan-maize">Regents of the University of Michigan</a>
+      <p class="text-xs">Site produced by <a href="https://creative.umich.edu" class="text-white underline hover:text-michigan-maize">Michigan Creative</a>, a unit of the <a href="https://vpcomm.umich.edu" class="text-white hover:text-michigan-maize">Office of the Vice President for Communications</a>
+      </p>
+    </div>
+  </div>
+</footer>

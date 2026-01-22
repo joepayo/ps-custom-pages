@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="{{ seo.meta }}">
+    <meta name="twitter:card" value="summary">
+    <meta property="og:title" content="{{ title }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="{{ site.url }}"/>
+    <meta property="og:image" content="{{ site.url }}/og-image.jpg"/>
+    <meta property="og:description" content="{{ seo.meta }}"/>
+    <meta name="theme-color" content="#00274c"/>
+
+    <link rel="stylesheet" href="https://use.typekit.net/jio8gnq.css">
+    <link rel="stylesheet" href="/{{ "main.css" if site.env === "dev" else manifest["main.css"] }}">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <title>{{ title }} | {{ general.siteTitle }}</title>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise%2CIntersectionObserver"></script>
+    <script defer src="/{{ "main.js" if site.env === "dev" else manifest["main.js"] }}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ general.googleID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "{{ general.googleID }}");
+    </script>
+
+  </head>
+  <body>
+    {% include "skip-link.njk" %}
+
+    {% include "header.njk" %}
+
+    {{ content | safe }}
+
+    {% include "footer.njk" %}
+  </body>
+</html>

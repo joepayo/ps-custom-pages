@@ -1,0 +1,26 @@
+image: node:lts
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -y -qq ssh
+  - apt-get install -y -qq sshpass
+  - npm ci
+  - npm run build
+
+stages:
+  - deploy
+
+deploy_prod:
+  stage: deploy
+
+  artifacts:
+    paths:
+      - public/
+
+  only:
+    - master
+
+  script:
+    - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "mkdir ${SITE_PATH}/${CI_JOB_ID}"
+    - sshpass -p $USER_PASS scp -o StrictHostKeyChecking=no -r public/* $SSH_USER@$SSH_HOST:${SITE_PATH}/${CI_JOB_ID}
+    - sshpass -p $USER_PASS ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "rm -rf ${SITE_PATH}/_old && mv ${SITE_PATH}/public ${SITE_PATH}/_old && mv ${SITE_PATH}/${CI_JOB_ID} ${SITE_PATH}/public"
